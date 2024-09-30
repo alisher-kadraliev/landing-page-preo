@@ -1,5 +1,6 @@
 import { CheckIcon } from "lucide-react";
 import Link from "next/link";
+import PricingComponents from "../components/PricingComponents";
 
 const item = [
   {
@@ -68,10 +69,9 @@ export default function Pricing() {
                   <span className="text-5xl font-bold">${item.monthlyPrice}</span>
                   <span className="text-sm text-gray-500">/month</span>
                 </div>
-                <div>
-                  {item.popular && <span className="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xl font-medium text-red-700 ring-1 ring-inset ring-red-600/10">Popular</span>
-}
-                </div>
+                {item.popular &&
+                  <PricingComponents />
+                }
               </div>
               <Link href="#" className={`btn btn-primary my-5 ${item.inverse ? 'bg-white text-black' : ''}`}>{item.buttonText}</Link>
               <ul>

@@ -20,7 +20,7 @@
   }
 
   .main-text-color {
-    @apply bg-gradient-to-b from-black to-blue-600 text-transparent bg-clip-text
+    @apply bg-gradient-to-b from-black to-blue-600 text-transparent bg-clip-text py-5
   }
 
   .main-desc-color {

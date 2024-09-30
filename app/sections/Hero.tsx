@@ -1,9 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import Cog from "../assets/cog.png"
-import Cylinder from "../assets/cylinder.png"
-import Image from "next/image";
-import Noodle from "../assets/noodle.png"
+import HeroImageComponent from "../components/HeroComponent";
 
 export default function Hero() {
   return (
@@ -22,11 +19,7 @@ export default function Hero() {
               </Link>
             </div>
           </div>
-          <div className="mt-20 md:mt-0 h-[500px] max-lg:h-auto md:flex-1 relative">
-            <Image src={Cog} alt="cog" width={500} height={500} className="md:absolute lg:max-w-none  md:h-full md:w-auto right-0" />
-            <Image src={Cylinder} alt="cylinder" width={220} height={220} className="lg:block hidden -top-8 right-96 md:absolute" />
-            <Image src={Noodle} alt="noodle" width={220} height={220} className="md:block hidden -bottom-40 -right-32 md:absolute rotate-[30deg]" />
-          </div>
+          <HeroImageComponent />
         </div>
       </div>
     </section>

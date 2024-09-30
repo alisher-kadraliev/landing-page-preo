@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import avatar1 from "../assets/avatar-1.png";
 import avatar2 from "../assets/avatar-2.png";
@@ -8,7 +9,8 @@ import avatar6 from "../assets/avatar-6.png";
 import avatar7 from "../assets/avatar-7.png";
 import avatar8 from "../assets/avatar-8.png";
 import avatar9 from "../assets/avatar-9.png";
-
+import React from "react";
+import { motion } from "framer-motion";
 const testimonials = [
   {
     text: "As a seasoned designer always on the lookout for innovative tools, Framer.com instantly grabbed my attention.",
@@ -70,29 +72,47 @@ const secondCol = testimonials.slice(3, 6);
 const thirdCol = testimonials.slice(6, 9);
 export default function Testimonials() {
   return (
-    <section className="py-10 bg-white">
+    <section className="pt-10 bg-white">
       <div className="container">
         <div className="flex items-center justify-center mb-3">
           <div className="tag">Testimonials</div>
         </div>
         <h2 className="main-text-color text-6xl max-lg:text-4xl font-bold text-center">What our customers are saying</h2>
-        <p className="main-desc-color text-center">Our customers love us and we love them back</p>
-
-        <div>
-          {firstCol.map((item, index) => (
-            <div key={index} className="shadow-xl rounded-xl border border-gray-200 p-5">
-              <div>{item.text}</div>
-              <div>
-                <Image src={item.imageSrc} alt={item.name} width={50} height={50} className=" h-10 w-10 rounded-full" />
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="font-medium">{item.name}</div>
-                <div className="text-gray-500">{item.username}</div>
-              </div>
-            </div>
-          ))}
+        <p className="main-desc-color text-center mt-6">Our customers love us and we love them back</p>
+        <div className="flex justify-center gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[730px] overflow-hidden">
+          <TestimonialCard testimonials={firstCol} />
+          <TestimonialCard testimonials={secondCol} className="hidden lg:block" />
+          <TestimonialCard testimonials={thirdCol} className="hidden lg:block" />
         </div>
       </div>
     </section>
+  );
+};
+
+
+const TestimonialCard = (props: { testimonials: typeof testimonials, className?: string }) => {
+  return (
+    <div className={`${props.className}`}>
+      <motion.div animate={{translateY: "-50%"}} transition={{duration: 10 , ease: "linear", repeat: Infinity, repeatType: "loop"}} className={`flex items-center flex-col  gap-5`}>
+        {
+          [...new Array(2)].fill(0).map((_, index) => (
+            <React.Fragment key={index}>
+              {props.testimonials.map((item, index) => (
+                <div key={index} className="shadow-xl rounded-xl border border-gray-200 p-5">
+                  <div>{item.text}</div>
+                  <div className="flex items-center gap-2 mt-5">
+                    <Image src={item.imageSrc} alt={item.name} width={50} height={50} className=" h-10 w-10 rounded-full" />
+                    <div className="flex flex-col">
+                      <div className="font-medium leading-5 tracking-tight">{item.name}</div>
+                      <div className="text-gray-500 leading-5 tracking-tight">{item.username}</div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </React.Fragment>
+          ))
+        }
+      </motion.div>
+    </div>
   );
 };
