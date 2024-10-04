@@ -32,6 +32,8 @@ export default function RootLayout({
         <script type="text/javascript"
           src="https://onsite.optimonk.com/script.js?account=227524"
           async></script>
+        <script id="convertful-api" src="https://app.convertful.com/Convertful.js?owner=82012" async></script>
+
       </body>
     </html>
   );
