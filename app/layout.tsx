@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Script from "next/script";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,7 +30,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#eaeefe]`}
       >
         {children}
-        <script src="https://moonpix.vercel.app/popup.js"></script>
+        <Script src="https://moonpix.vercel.app/popup.js"></Script>
       </body>
     </html>
   );
