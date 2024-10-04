@@ -29,6 +29,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#eaeefe]`}
       >
         {children}
+        <script src="https://moonpix.vercel.app/popup.js"></script>
       </body>
     </html>
   );
