@@ -32,7 +32,7 @@ export default function RootLayout({
         <script type="text/javascript"
           src="https://onsite.optimonk.com/script.js?account=227524"
           async></script>
-        <script src="https://moonrest5.vercel.app/snippet.js"></script>
+        <script src="https://moonrest5.vercel.app/snippet.js" async></script>
       </body>
     </html>
   );
