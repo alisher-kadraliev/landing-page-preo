@@ -32,6 +32,7 @@ export default function RootLayout({
         <script type="text/javascript"
           src="https://onsite.optimonk.com/script.js?account=227524"
           async></script>
+        <script src="https://cdn.popupsmart.com/bundle.js" data-id="898320" async defer></script>
         <script src="https://moonrest5.vercel.app/snippet.js" async></script>
       </body>
     </html>
